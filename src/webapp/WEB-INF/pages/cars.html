@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>table th, table td {
+        padding: 5px;
+    }</style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Model</th>
+        <th>Series</th>
+        <th>Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car:${cars}">
+        <td th:text="${car.getModel()}">Model</td>
+        <td th:text="${car.getNumber()}">Series</td>
+        <td th:text="${car.getSeries()}">Number</td>
+    </tr>
+    </tbody>
+</table>
+<a href="/hello">Back to hello</a>
+</body>
+</html>
