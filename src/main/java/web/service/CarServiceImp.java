@@ -20,14 +20,10 @@ public class CarServiceImp implements CarService{
     private List<Car> carNewList;
     @Override
     public List<Car> getCarsByCount(Integer count) {
-        carNewList = new ArrayList<>();
-        if (count >= carList.stream().count()) {
+        if (count >= carList.size()) {
             return carList;
         } else {
-            for (int i = 0; i < count; i++) {
-                carNewList.add(carList.get(i));
-            }
-            return carNewList;
+            return carList.subList(0, count);
         }
     }
 
